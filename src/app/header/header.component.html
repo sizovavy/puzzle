@@ -1,0 +1,27 @@
+ <form class="container form-group" [formGroup]="myForm">
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" >Размер</span>
+            </div>
+            <input type="number" class="form-control" formControlName="size">
+
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button"
+                        (click)="onSizeChange(myForm.controls['size'].value); " 
+                        [disabled]="myForm.controls['size'].invalid || myForm.controls['size'].pristine">Изменить</button>
+            </div>
+            
+            </div> 
+            <small class="form-text text-muted">
+                Значение должно быть в пределах 3..10
+            </small>
+        </div>
+        <div class="col-md-1.5">
+            <button class="btn btn-primary" type = "submit" (click)="onSizeChange(null); "  >Перемешать</button>
+        </div>
+    </div>
+</form>
+     
+      

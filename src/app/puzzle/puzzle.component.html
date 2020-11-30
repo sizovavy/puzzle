@@ -1,0 +1,9 @@
+<app-header [len] = "size" (onSizeChanged) = "onSizeChanged($event)"></app-header>
+<div style="text-align: center;">
+    <div class = "field"> 
+        <div  *ngFor="let row of field;  let i = index">
+        <div class = "brick" [ngClass]="{'empty' : item == -1}" 
+                    *ngFor="let item of row;  let j = index" (click)="click(i,j)">{{item}}</div><br>
+        </div>  
+    </div>
+</div>
